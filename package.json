@@ -1,4 +1,3 @@
-// Specify which node and express must be used in Heroku
 
 {
   "name": "server",
