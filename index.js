@@ -1,10 +1,13 @@
-const express = require('express');         // common js import style
-const app = express();                      // new app running express
+const express = require('express');                                 // common js import style
+require('./services/passport');             
+const app = express();                                              // new app running express
 
-// Example of a route handler
-app.get('/', (req, res) => {
-    res.send({ mr: 'pickles'});
-});
+
+// This require statement returns a function. Because thats what we exported from the file (take a look)
+// We immediately pass the app to that function
+                               
+require('./routes/authRoutes')(app)
+
 
 
 // This is done so Heroku can inject the correct port into our app. or 5000 (development)
